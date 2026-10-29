@@ -1,0 +1,61 @@
+Start testing: Oct 29 11:41 Hora oficial do Brasil
+----------------------------------------------------------
+1/2 Testing: Metrics
+1/2 Test: Metrics
+Command: "C:/Users/Gabriel/Documents/GitHub/FrameForge/build/tests/test_metrics.exe"
+Directory: C:/Users/Gabriel/Documents/GitHub/FrameForge/build/tests
+"Metrics" start time: Oct 29 11:41 Hora oficial do Brasil
+Output:
+----------------------------------------------------------
+=== Metrics Tests ===
+
+TestEmptyMetrics
+TestSingleFrame
+TestSteady30FPS
+TestSteady60FPS
+TestDroppedFrames
+TestJitteryIntervals
+TestReset
+TestGetFrameCount
+
+27/27 assertions passed
+ALL TESTS PASSED
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Passed.
+"Metrics" end time: Oct 29 11:41 Hora oficial do Brasil
+"Metrics" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: Logger
+2/2 Test: Logger
+Command: "C:/Users/Gabriel/Documents/GitHub/FrameForge/build/tests/test_logger.exe"
+Directory: C:/Users/Gabriel/Documents/GitHub/FrameForge/build/tests
+"Logger" start time: Oct 29 11:41 Hora oficial do Brasil
+Output:
+----------------------------------------------------------
+=== Logger Tests ===
+
+TestBasicLogging
+TestLogLevels
+TestSetLevel
+TestSetLevelDebug
+TestLevelLabels
+TestTimestampFormat
+TestThreadSafety
+TestEmptyMessage
+TestGetLevel
+TestGlobalInstance
+
+26/26 assertions passed
+ALL TESTS PASSED
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Passed.
+"Logger" end time: Oct 29 11:41 Hora oficial do Brasil
+"Logger" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 29 11:41 Hora oficial do Brasil

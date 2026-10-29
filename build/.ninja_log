@@ -1,0 +1,18 @@
+# ninja log v7
+90	3505	8149880295282280	tests/CMakeFiles/test_metrics.dir/test_metrics.cpp.obj	8001c52a59aed92b
+57	4013	8149880294939063	CMakeFiles/frameforge.dir/src/diagnostics/Metrics.cpp.obj	fa18896a451db30
+105	4157	8149880295417807	tests/CMakeFiles/test_metrics.dir/__/src/diagnostics/Metrics.cpp.obj	6a200ce9e4c9137b
+4158	6022	8149880335947697	tests/test_metrics.exe	5f7d54ef609bbd51
+115	6394	8149880295525819	tests/CMakeFiles/test_logger.dir/test_logger.cpp.obj	8ae06d69d9d558d3
+47	7779	8149880294834957	CMakeFiles/frameforge.dir/src/diagnostics/Logger.cpp.obj	69c0cf6df9b26ac7
+127	8421	8149880295640528	tests/CMakeFiles/test_logger.dir/__/src/diagnostics/Logger.cpp.obj	1e5a9f0ef9bb4047
+67	8495	8149880295038256	CMakeFiles/frameforge.dir/src/capture/DeviceEnumerator.cpp.obj	1a70c7344a92e829
+77	8667	8149880295147579	CMakeFiles/frameforge.dir/src/capture/VideoCapturer.cpp.obj	c8802906d5b7cdac
+38	8702	8149880294749776	CMakeFiles/frameforge.dir/src/main.cpp.obj	e8feb8868dac784b
+8703	10027	8149880381399713	frameforge.exe	f783821345fc59f0
+46	695	8149880622582689	tests/test_logger.exe	f51b35a4edbbeeee
+24	2834	8149882710859193	CMakeFiles/frameforge.dir/src/capture/DeviceEnumerator.cpp.obj	1a70c7344a92e829
+2836	3315	8149882738977806	frameforge.exe	f783821345fc59f0
+46	3436	8149885225855518	CMakeFiles/frameforge.dir/src/main.cpp.obj	e8feb8868dac784b
+58	3639	8149885225968227	CMakeFiles/frameforge.dir/src/capture/VideoCapturer.cpp.obj	c8802906d5b7cdac
+3640	4269	8149885261794352	frameforge.exe	f783821345fc59f0

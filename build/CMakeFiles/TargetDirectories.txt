@@ -1,0 +1,9 @@
+C:/Users/Gabriel/Documents/GitHub/FrameForge/build/CMakeFiles/frameforge.dir
+C:/Users/Gabriel/Documents/GitHub/FrameForge/build/CMakeFiles/test.dir
+C:/Users/Gabriel/Documents/GitHub/FrameForge/build/CMakeFiles/edit_cache.dir
+C:/Users/Gabriel/Documents/GitHub/FrameForge/build/CMakeFiles/rebuild_cache.dir
+C:/Users/Gabriel/Documents/GitHub/FrameForge/build/tests/CMakeFiles/test_metrics.dir
+C:/Users/Gabriel/Documents/GitHub/FrameForge/build/tests/CMakeFiles/test_logger.dir
+C:/Users/Gabriel/Documents/GitHub/FrameForge/build/tests/CMakeFiles/test.dir
+C:/Users/Gabriel/Documents/GitHub/FrameForge/build/tests/CMakeFiles/edit_cache.dir
+C:/Users/Gabriel/Documents/GitHub/FrameForge/build/tests/CMakeFiles/rebuild_cache.dir
