@@ -104,6 +104,22 @@ inline std::string WideToUtf8(std::wstring_view wide) {
     return result;
 }
 
+// Convert narrow string (UTF-8) to wide string (UTF-16)
+inline std::wstring Utf8ToWide(std::string_view text) {
+    if (text.empty()) return {};
+    int size = MultiByteToWideChar(
+        CP_UTF8, 0,
+        text.data(), static_cast<int>(text.size()),
+        nullptr, 0);
+    if (size <= 0) return {};
+    std::wstring result(static_cast<size_t>(size), L'\0');
+    MultiByteToWideChar(
+        CP_UTF8, 0,
+        text.data(), static_cast<int>(text.size()),
+        result.data(), size);
+    return result;
+}
+
 // Convert GUID to string representation
 inline std::string GuidToString(const GUID& guid) {
     wchar_t buf[64];

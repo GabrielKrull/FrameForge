@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/ALUNO/Documents/GitHub/FrameForge/build-mingw/cmake_install.cmake",
+		"C:/Users/ALUNO/Documents/GitHub/FrameForge/build-mingw/tests/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -15,8 +15,14 @@ add_executable(frameforge
     src/main.cpp
     src/diagnostics/Logger.cpp
     src/diagnostics/Metrics.cpp
+    src/diagnostics/Telemetry.cpp
     src/capture/DeviceEnumerator.cpp
     src/capture/VideoCapturer.cpp
+    src/capture/DeviceCaptureSession.cpp
+    src/capture/CaptureRunner.cpp
+    src/preview/D3D11Renderer.cpp
+    src/preview/PreviewWindow.cpp
+    src/preview/PreviewController.cpp
 )
 
 target_include_directories(frameforge PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
@@ -27,6 +33,9 @@ target_link_libraries(frameforge PRIVATE
     mfreadwrite
     mfuuid
     ole32
+    d3d11
+    dxgi
+    d3dcompiler
 )
 
 # === Tests ===

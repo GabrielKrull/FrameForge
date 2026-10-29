@@ -1,0 +1,10 @@
+C:/Users/ALUNO/Documents/GitHub/FrameForge/build-mingw/CMakeFiles/frameforge.dir
+C:/Users/ALUNO/Documents/GitHub/FrameForge/build-mingw/CMakeFiles/test.dir
+C:/Users/ALUNO/Documents/GitHub/FrameForge/build-mingw/CMakeFiles/edit_cache.dir
+C:/Users/ALUNO/Documents/GitHub/FrameForge/build-mingw/CMakeFiles/rebuild_cache.dir
+C:/Users/ALUNO/Documents/GitHub/FrameForge/build-mingw/tests/CMakeFiles/test_metrics.dir
+C:/Users/ALUNO/Documents/GitHub/FrameForge/build-mingw/tests/CMakeFiles/test_logger.dir
+C:/Users/ALUNO/Documents/GitHub/FrameForge/build-mingw/tests/CMakeFiles/test_frame_queue.dir
+C:/Users/ALUNO/Documents/GitHub/FrameForge/build-mingw/tests/CMakeFiles/test.dir
+C:/Users/ALUNO/Documents/GitHub/FrameForge/build-mingw/tests/CMakeFiles/edit_cache.dir
+C:/Users/ALUNO/Documents/GitHub/FrameForge/build-mingw/tests/CMakeFiles/rebuild_cache.dir

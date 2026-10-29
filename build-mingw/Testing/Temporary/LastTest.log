@@ -1,0 +1,86 @@
+Start testing: Oct 29 16:25 Hora oficial do Brasil
+----------------------------------------------------------
+1/3 Testing: Metrics
+1/3 Test: Metrics
+Command: "C:/Users/ALUNO/Documents/GitHub/FrameForge/build-mingw/tests/test_metrics.exe"
+Directory: C:/Users/ALUNO/Documents/GitHub/FrameForge/build-mingw/tests
+"Metrics" start time: Oct 29 16:25 Hora oficial do Brasil
+Output:
+----------------------------------------------------------
+=== Metrics Tests ===
+
+TestEmptyMetrics
+TestSingleFrame
+TestSteady30FPS
+TestSteady60FPS
+TestDroppedFrames
+TestJitteryIntervals
+TestReset
+TestGetFrameCount
+
+27/27 assertions passed
+ALL TESTS PASSED
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"Metrics" end time: Oct 29 16:25 Hora oficial do Brasil
+"Metrics" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/3 Testing: Logger
+2/3 Test: Logger
+Command: "C:/Users/ALUNO/Documents/GitHub/FrameForge/build-mingw/tests/test_logger.exe"
+Directory: C:/Users/ALUNO/Documents/GitHub/FrameForge/build-mingw/tests
+"Logger" start time: Oct 29 16:25 Hora oficial do Brasil
+Output:
+----------------------------------------------------------
+=== Logger Tests ===
+
+TestBasicLogging
+TestLogLevels
+TestSetLevel
+TestSetLevelDebug
+TestLevelLabels
+TestTimestampFormat
+TestThreadSafety
+TestEmptyMessage
+TestGetLevel
+TestGlobalInstance
+
+26/26 assertions passed
+ALL TESTS PASSED
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"Logger" end time: Oct 29 16:25 Hora oficial do Brasil
+"Logger" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/3 Testing: FrameQueue
+3/3 Test: FrameQueue
+Command: "C:/Users/ALUNO/Documents/GitHub/FrameForge/build-mingw/tests/test_frame_queue.exe"
+Directory: C:/Users/ALUNO/Documents/GitHub/FrameForge/build-mingw/tests
+"FrameQueue" start time: Oct 29 16:25 Hora oficial do Brasil
+Output:
+----------------------------------------------------------
+=== Frame queue tests ===
+TestFifoOrder
+TestDropOldestWhenFull
+TestWaitPopTimeout
+TestWaitPopWakesProducer
+TestCloseRejectsAndDrains
+TestClearCountsDrops
+TestFrameQueueAccounting
+
+35/35 assertions passed
+<end of output>
+Test time =   0.16 sec
+----------------------------------------------------------
+Test Passed.
+"FrameQueue" end time: Oct 29 16:25 Hora oficial do Brasil
+"FrameQueue" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 29 16:25 Hora oficial do Brasil

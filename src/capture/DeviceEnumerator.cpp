@@ -86,6 +86,14 @@ HRESULT DeviceEnumerator::EnumerateVideo(std::vector<DeviceInfo>& devices) {
             std::format("Device [{}]: \"{}\"", info.index, name));
     }
 
+    // MFEnumDeviceSources allocates the array itself with CoTaskMemAlloc;
+    // the activators were adopted by ComPtr above and are released when
+    // m_activators is cleared.
+    if (rawActivators) {
+        CoTaskMemFree(rawActivators);
+        rawActivators = nullptr;
+    }
+
     Logger::Global().Info("DeviceEnumerator",
         std::format("Found {} video capture device(s)", devices.size()));
 
