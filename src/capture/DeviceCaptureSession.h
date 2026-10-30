@@ -54,6 +54,7 @@ private:
     DeviceCaptureOptions m_options;
     std::unique_ptr<VideoCapturer> m_capturer;
     CaptureSessionInfo m_info;
+    bool m_open = false;
 };
 
 } // namespace frameforge

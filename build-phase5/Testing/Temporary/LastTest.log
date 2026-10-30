@@ -1,0 +1,243 @@
+Start testing: Oct 30 10:30 Hora oficial do Brasil
+----------------------------------------------------------
+1/10 Testing: Metrics
+1/10 Test: Metrics
+Command: "C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests/test_metrics.exe"
+Directory: C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests
+"Metrics" start time: Oct 30 10:30 Hora oficial do Brasil
+Output:
+----------------------------------------------------------
+=== Metrics Tests ===
+
+TestEmptyMetrics
+TestSingleFrame
+TestSteady30FPS
+TestSteady60FPS
+TestDroppedFrames
+TestJitteryIntervals
+TestReset
+TestGetFrameCount
+
+27/27 assertions passed
+ALL TESTS PASSED
+<end of output>
+Test time =   0.07 sec
+----------------------------------------------------------
+Test Passed.
+"Metrics" end time: Oct 30 10:30 Hora oficial do Brasil
+"Metrics" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/10 Testing: Logger
+2/10 Test: Logger
+Command: "C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests/test_logger.exe"
+Directory: C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests
+"Logger" start time: Oct 30 10:30 Hora oficial do Brasil
+Output:
+----------------------------------------------------------
+=== Logger Tests ===
+
+TestBasicLogging
+TestLogLevels
+TestSetLevel
+TestSetLevelDebug
+TestLevelLabels
+TestTimestampFormat
+TestThreadSafety
+TestEmptyMessage
+TestGetLevel
+TestGlobalInstance
+
+26/26 assertions passed
+ALL TESTS PASSED
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Passed.
+"Logger" end time: Oct 30 10:30 Hora oficial do Brasil
+"Logger" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/10 Testing: FrameQueue
+3/10 Test: FrameQueue
+Command: "C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests/test_frame_queue.exe"
+Directory: C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests
+"FrameQueue" start time: Oct 30 10:30 Hora oficial do Brasil
+Output:
+----------------------------------------------------------
+=== Frame queue tests ===
+TestFifoOrder
+TestDropOldestWhenFull
+TestWaitPopTimeout
+TestWaitPopWakesProducer
+TestCloseRejectsAndDrains
+TestClearCountsDrops
+TestFrameQueueAccounting
+
+35/35 assertions passed
+<end of output>
+Test time =   0.19 sec
+----------------------------------------------------------
+Test Passed.
+"FrameQueue" end time: Oct 30 10:30 Hora oficial do Brasil
+"FrameQueue" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/10 Testing: CaptureState
+4/10 Test: CaptureState
+Command: "C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests/test_capture_state.exe"
+Directory: C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests
+"CaptureState" start time: Oct 30 10:30 Hora oficial do Brasil
+Output:
+----------------------------------------------------------
+=== Capture state tests ===
+TestDefaultState
+TestHappyPathTransitions
+TestInvalidTransitionsAreRejected
+TestSameStateIsAccepted
+TestShutdownTransition
+TestForceBypassesValidation
+TestStateNames
+
+33/33 assertions passed
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"CaptureState" end time: Oct 30 10:30 Hora oficial do Brasil
+"CaptureState" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/10 Testing: ReconnectPolicy
+5/10 Test: ReconnectPolicy
+Command: "C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests/test_reconnect_policy.exe"
+Directory: C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests
+"ReconnectPolicy" start time: Oct 30 10:30 Hora oficial do Brasil
+Output:
+----------------------------------------------------------
+=== Reconnect policy tests ===
+TestRetryBudget
+TestUnlimitedRetries
+TestNonPositiveFailuresAreAllowed
+TestExponentialBackoff
+TestInvalidAttemptIsClampedToFirst
+TestZeroBaseDelay
+TestMultiplierBelowOneIsNeutralised
+TestMaxDelayBelowBaseIsRaisedToBase
+
+25/25 assertions passed
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"ReconnectPolicy" end time: Oct 30 10:30 Hora oficial do Brasil
+"ReconnectPolicy" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/10 Testing: Telemetry
+6/10 Test: Telemetry
+Command: "C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests/test_telemetry.exe"
+Directory: C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests
+"Telemetry" start time: Oct 30 10:30 Hora oficial do Brasil
+Output:
+----------------------------------------------------------
+=== Telemetry tests ===
+TestCounters
+TestThreadSafeCounters
+TestStateEventsOnlyOnChange
+TestBoundedEventLog
+TestReconnectAccounting
+TestSummaryEmission
+TestExportJson
+TestAudioTelemetry
+TestReset
+
+58/58 assertions passed
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Passed.
+"Telemetry" end time: Oct 30 10:30 Hora oficial do Brasil
+"Telemetry" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/10 Testing: CaptureRunner
+7/10 Test: CaptureRunner
+Command: "C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests/test_capture_runner.exe"
+Directory: C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests
+"CaptureRunner" start time: Oct 30 10:30 Hora oficial do Brasil
+Output:
+----------------------------------------------------------
+=== Capture runner tests ===
+TestHappyPath
+TestRetryThenSuccess
+TestRetryBudgetExhausted
+[2026-10-30 10:30:11.417] [ERROR] [CaptureRunner] Retry budget exhausted after 3 consecutive failure(s)
+TestRunFailureRecovers
+TestFactoryFailure
+[2026-10-30 10:30:11.448] [ERROR] [CaptureRunner] Retry budget exhausted after 2 consecutive failure(s)
+TestStopBeforeStart
+TestCancelDuringBackoff
+TestDeadlineDuringBackoffIsSuccess
+
+55/55 assertions passed
+<end of output>
+Test time =   0.26 sec
+----------------------------------------------------------
+Test Passed.
+"CaptureRunner" end time: Oct 30 10:30 Hora oficial do Brasil
+"CaptureRunner" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/10 Testing: AudioMetrics
+8/10 Test: AudioMetrics
+Command: "C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests/test_audio_metrics.exe"
+Directory: C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests
+"AudioMetrics" start time: Oct 30 10:30 Hora oficial do Brasil
+Output:
+----------------------------------------------------------
+Running test_audio_metrics...
+test_audio_metrics: 26/26 passed
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"AudioMetrics" end time: Oct 30 10:30 Hora oficial do Brasil
+"AudioMetrics" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/10 Testing: AVSync
+9/10 Test: AVSync
+Command: "C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests/test_av_sync.exe"
+Directory: C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests
+"AVSync" start time: Oct 30 10:30 Hora oficial do Brasil
+Output:
+----------------------------------------------------------
+Running test_av_sync...
+test_av_sync: 18/18 passed
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"AVSync" end time: Oct 30 10:30 Hora oficial do Brasil
+"AVSync" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/10 Testing: AudioEnumerator
+10/10 Test: AudioEnumerator
+Command: "C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests/test_audio_enumerator.exe"
+Directory: C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests
+"AudioEnumerator" start time: Oct 30 10:30 Hora oficial do Brasil
+Output:
+----------------------------------------------------------
+Running test_audio_enumerator...
+test_audio_enumerator: 16/16 passed
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"AudioEnumerator" end time: Oct 30 10:30 Hora oficial do Brasil
+"AudioEnumerator" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 30 10:30 Hora oficial do Brasil

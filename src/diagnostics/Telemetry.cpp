@@ -103,6 +103,31 @@ void Telemetry::OnFrameRejected() {
     m_framesRejected.fetch_add(1, std::memory_order_relaxed);
 }
 
+void Telemetry::SetAudioInfo(const std::string& deviceName, const std::string& formatDesc) {
+    std::lock_guard<std::mutex> lock(m_mutex);
+    m_hasAudio.store(true, std::memory_order_release);
+    m_audioDeviceName = deviceName;
+    m_audioFormatDesc = formatDesc;
+}
+
+void Telemetry::OnAudioPacket(uint32_t frames, bool discontinuity, bool silent) {
+    m_audioPackets.fetch_add(1, std::memory_order_relaxed);
+    m_audioSampleFrames.fetch_add(frames, std::memory_order_relaxed);
+    if (discontinuity) {
+        m_audioDiscontinuities.fetch_add(1, std::memory_order_relaxed);
+    }
+    if (silent) {
+        m_audioSilentPackets.fetch_add(1, std::memory_order_relaxed);
+    }
+}
+
+void Telemetry::SetAVSync(double offsetMs, double driftPpm, bool inSync) {
+    std::lock_guard<std::mutex> lock(m_mutex);
+    m_avOffsetMs = offsetMs;
+    m_avDriftPpm = driftPpm;
+    m_avInSync = inSync;
+}
+
 void Telemetry::SetState(CaptureState state) {
     const CaptureState previous =
         m_state.exchange(state, std::memory_order_acq_rel);
@@ -201,6 +226,16 @@ TelemetrySnapshot Telemetry::Snapshot() const {
     {
         std::lock_guard<std::mutex> lock(m_mutex);
         snapshot.session = m_session;
+        snapshot.hasAudio = m_hasAudio.load(std::memory_order_relaxed);
+        snapshot.audioPackets = m_audioPackets.load(std::memory_order_relaxed);
+        snapshot.audioSampleFrames = m_audioSampleFrames.load(std::memory_order_relaxed);
+        snapshot.audioDiscontinuities = m_audioDiscontinuities.load(std::memory_order_relaxed);
+        snapshot.audioSilentPackets = m_audioSilentPackets.load(std::memory_order_relaxed);
+        snapshot.audioDeviceName = m_audioDeviceName;
+        snapshot.audioFormat = m_audioFormatDesc;
+        snapshot.avOffsetMs = m_avOffsetMs;
+        snapshot.avDriftPpm = m_avDriftPpm;
+        snapshot.avInSync = m_avInSync;
     }
 
     return snapshot;
@@ -246,6 +281,16 @@ void Telemetry::EmitSummary(Logger& logger) {
         snapshot.effectiveInputFPS,
         snapshot.effectivePresentedFPS,
         events.size()));
+
+    if (snapshot.hasAudio) {
+        logger.Info("Telemetry", std::format(
+            "audio=\"{}\" format=[{}] packets={} frames={} disc={} silent={} av_offset={:.2f}ms drift={:.1f}ppm in_sync={}",
+            snapshot.audioDeviceName, snapshot.audioFormat,
+            snapshot.audioPackets, snapshot.audioSampleFrames,
+            snapshot.audioDiscontinuities, snapshot.audioSilentPackets,
+            snapshot.avOffsetMs, snapshot.avDriftPpm,
+            snapshot.avInSync ? "yes" : "no"));
+    }
 }
 
 bool Telemetry::MaybeEmitSummary(Logger& logger, double intervalSec) {
@@ -324,6 +369,18 @@ bool Telemetry::ExportJson(const std::string& path) const {
     out << std::format("    \"effective_presented_fps\": {:.3f}\n",
         snapshot.effectivePresentedFPS);
     out << "  },\n";
+    out << "  \"audio\": {\n";
+    out << std::format("    \"enabled\": {},\n", snapshot.hasAudio ? "true" : "false");
+    out << std::format("    \"device\": \"{}\",\n", JsonEscape(snapshot.audioDeviceName));
+    out << std::format("    \"format\": \"{}\",\n", JsonEscape(snapshot.audioFormat));
+    out << std::format("    \"packets\": {},\n", snapshot.audioPackets);
+    out << std::format("    \"sample_frames\": {},\n", snapshot.audioSampleFrames);
+    out << std::format("    \"discontinuities\": {},\n", snapshot.audioDiscontinuities);
+    out << std::format("    \"silent_packets\": {},\n", snapshot.audioSilentPackets);
+    out << std::format("    \"av_offset_ms\": {:.3f},\n", snapshot.avOffsetMs);
+    out << std::format("    \"av_drift_ppm\": {:.2f},\n", snapshot.avDriftPpm);
+    out << std::format("    \"av_in_sync\": {}\n", snapshot.avInSync ? "true" : "false");
+    out << "  },\n";
     out << "  \"events\": [\n";
 
     for (std::size_t i = 0; i < events.size(); ++i) {
@@ -363,6 +420,11 @@ void Telemetry::Reset() {
     m_reconnectAttempts.store(0);
     m_reconnectFailures.store(0);
     m_successfulOpens.store(0);
+    m_hasAudio.store(false);
+    m_audioPackets.store(0);
+    m_audioSampleFrames.store(0);
+    m_audioDiscontinuities.store(0);
+    m_audioSilentPackets.store(0);
 
     std::lock_guard<std::mutex> lock(m_mutex);
     m_events.clear();
@@ -370,6 +432,11 @@ void Telemetry::Reset() {
     m_lastSummaryQpc = QueryNow();
     m_lastSummaryReceived = 0;
     m_lastSummaryPresented = 0;
+    m_audioDeviceName.clear();
+    m_audioFormatDesc.clear();
+    m_avOffsetMs = 0.0;
+    m_avDriftPpm = 0.0;
+    m_avInSync = true;
 }
 
 } // namespace frameforge

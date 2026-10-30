@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/cmake_install.cmake",
+		"C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

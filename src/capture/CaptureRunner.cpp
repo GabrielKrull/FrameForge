@@ -113,7 +113,10 @@ HRESULT CaptureRunner::Run(const CaptureRunConfig& config,
         if (useDuration) {
             maxWaitSec = config.durationSec - ElapsedSeconds(runStart);
             if (maxWaitSec <= 0.0) {
-                finalResult = lastError;
+                // The overall deadline elapsed during recovery. Per the
+                // Run() contract this is a normal completion, not a
+                // capture failure.
+                finalResult = S_OK;
                 return std::nullopt;
             }
         }
@@ -134,7 +137,8 @@ HRESULT CaptureRunner::Run(const CaptureRunConfig& config,
             return std::nullopt;
         }
         if (backoff == BackoffResult::DeadlineReached) {
-            finalResult = lastError;
+            // See above: the run deadline is a normal completion.
+            finalResult = S_OK;
             return std::nullopt;
         }
 

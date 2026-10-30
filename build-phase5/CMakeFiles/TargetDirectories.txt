@@ -1,0 +1,17 @@
+C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/CMakeFiles/frameforge.dir
+C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/CMakeFiles/test.dir
+C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/CMakeFiles/edit_cache.dir
+C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/CMakeFiles/rebuild_cache.dir
+C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests/CMakeFiles/test_metrics.dir
+C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests/CMakeFiles/test_logger.dir
+C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests/CMakeFiles/test_frame_queue.dir
+C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests/CMakeFiles/test_capture_state.dir
+C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests/CMakeFiles/test_reconnect_policy.dir
+C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests/CMakeFiles/test_telemetry.dir
+C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests/CMakeFiles/test_capture_runner.dir
+C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests/CMakeFiles/test_audio_metrics.dir
+C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests/CMakeFiles/test_av_sync.dir
+C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests/CMakeFiles/test_audio_enumerator.dir
+C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests/CMakeFiles/test.dir
+C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests/CMakeFiles/edit_cache.dir
+C:/Users/Gabriel/Documents/GitHub/FrameForge/build-phase5/tests/CMakeFiles/rebuild_cache.dir

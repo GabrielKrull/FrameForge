@@ -20,9 +20,15 @@ add_executable(frameforge
     src/capture/VideoCapturer.cpp
     src/capture/DeviceCaptureSession.cpp
     src/capture/CaptureRunner.cpp
+    src/capture/VirtualCameraSupport.cpp
     src/preview/D3D11Renderer.cpp
     src/preview/PreviewWindow.cpp
     src/preview/PreviewController.cpp
+    src/audio/AudioEnumerator.cpp
+    src/audio/AudioCapturer.cpp
+    src/audio/AudioMetrics.cpp
+    src/audio/AVSyncTracker.cpp
+    src/audio/AudioRenderer.cpp
 )
 
 target_include_directories(frameforge PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
@@ -32,7 +38,9 @@ target_link_libraries(frameforge PRIVATE
     mfplat
     mfreadwrite
     mfuuid
+    mfsensorgroup
     ole32
+    propsys
     d3d11
     dxgi
     d3dcompiler

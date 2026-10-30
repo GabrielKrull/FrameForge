@@ -59,6 +59,18 @@ struct TelemetrySnapshot {
     double   uptimeSec          = 0.0;
     double   effectiveInputFPS  = 0.0;
     double   effectivePresentedFPS = 0.0;
+
+    // Audio telemetry (Fase 4)
+    bool        hasAudio           = false;
+    std::string audioDeviceName;
+    std::string audioFormat;
+    uint64_t    audioPackets       = 0;
+    uint64_t    audioSampleFrames  = 0;
+    uint64_t    audioDiscontinuities = 0;
+    uint64_t    audioSilentPackets = 0;
+    double      avOffsetMs         = 0.0;
+    double      avDriftPpm         = 0.0;
+    bool        avInSync           = true;
 };
 
 // ============================================================
@@ -86,6 +98,11 @@ public:
     void OnFrameSkipped();
     void OnFramePresented();
     void OnFrameRejected();
+
+    // --- Audio events (Fase 4) -----------------------------
+    void SetAudioInfo(const std::string& deviceName, const std::string& formatDesc);
+    void OnAudioPacket(uint32_t frames, bool discontinuity, bool silent);
+    void SetAVSync(double offsetMs, double driftPpm, bool inSync);
 
     // --- Session / recovery events --------------------------
     void SetState(CaptureState state);
@@ -134,6 +151,20 @@ private:
     std::atomic<uint64_t> m_reconnectAttempts{ 0 };
     std::atomic<uint64_t> m_reconnectFailures{ 0 };
     std::atomic<uint64_t> m_successfulOpens{ 0 };
+
+    // Audio atomic counters (Fase 4)
+    std::atomic<bool>     m_hasAudio{ false };
+    std::atomic<uint64_t> m_audioPackets{ 0 };
+    std::atomic<uint64_t> m_audioSampleFrames{ 0 };
+    std::atomic<uint64_t> m_audioDiscontinuities{ 0 };
+    std::atomic<uint64_t> m_audioSilentPackets{ 0 };
+
+
+    std::string m_audioDeviceName;
+    std::string m_audioFormatDesc;
+    double m_avOffsetMs = 0.0;
+    double m_avDriftPpm = 0.0;
+    bool   m_avInSync = true;
 
     mutable std::mutex m_mutex;
     TelemetrySessionInfo m_session;

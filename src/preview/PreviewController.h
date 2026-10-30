@@ -79,6 +79,11 @@ public:
 
     PreviewStats GetStats() const;
 
+    // Optional observer tapped on each frame received by the capture thread
+    void SetFrameObserver(std::function<void(const Frame&)> observer) {
+        m_frameObserver = std::move(observer);
+    }
+
 private:
     void CaptureThreadFunc();
     void UpdateWindowTitle(double elapsedSec);
@@ -110,6 +115,7 @@ private:
 
     // Capture-thread result (read after join)
     HRESULT m_captureResult = S_OK;
+    std::function<void(const Frame&)> m_frameObserver;
 };
 
 } // namespace frameforge

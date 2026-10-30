@@ -90,6 +90,9 @@ void PreviewController::CaptureThreadFunc() {
             m_metrics,
             [this](Frame&& frame) {
                 m_telemetry.OnFrameReceived();
+                if (m_frameObserver) {
+                    m_frameObserver(frame);
+                }
                 const FrameQueue::PushResult result =
                     m_queue.Push(std::move(frame));
                 if (result == FrameQueue::PushResult::ReplacedOldest) {
@@ -172,6 +175,12 @@ int PreviewController::Run() {
         const double elapsedSec = std::chrono::duration<double>(
             std::chrono::steady_clock::now() - uiStart).count();
         UpdateWindowTitle(elapsedSec);
+
+        // Periodically persist an aggregated telemetry line so a long
+        // run leaves a readable trail in the log, not just a final
+        // report. MaybeEmitSummary() is a no-op until the interval
+        // elapses and never touches the per-frame path.
+        m_telemetry.MaybeEmitSummary(Logger::Global(), 5.0);
 
         Frame frame;
         if (!m_queue.WaitPopFor(frame, std::chrono::milliseconds(10))) {

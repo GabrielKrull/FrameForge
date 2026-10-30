@@ -1,0 +1,11 @@
+Metrics 1 0.06986
+Logger 1 0.0774505
+FrameQueue 1 0.193072
+CaptureState 1 0.0540102
+ReconnectPolicy 1 0.0537178
+Telemetry 1 0.0816847
+CaptureRunner 1 0.263158
+AudioMetrics 1 0.0573082
+AVSync 1 0.0462733
+AudioEnumerator 1 0.0617514
+---
